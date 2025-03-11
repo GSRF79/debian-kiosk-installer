@@ -6,6 +6,7 @@ apt-get update
 # get software
 apt-get install \
     unclutter \
+    nano \
     xorg \
     chromium \
     openbox \
