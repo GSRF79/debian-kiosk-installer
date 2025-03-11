@@ -65,7 +65,7 @@ do
     --no-first-run \
     --start-maximized \
     --disable \
-    --disable-translate \
+    --disable-features=Translate \
     --incognito \
     --kiosk "https://neave.tv/"
   sleep 5
