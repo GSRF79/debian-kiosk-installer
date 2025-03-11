@@ -53,26 +53,21 @@ fi
 cat > /home/kiosk/.config/openbox/autostart << EOF
 #!/bin/bash
 
-KIOSK_URL="https://neave.tv/"
-
 unclutter -idle 0.1 -grab -root &
 
 while :
 do
+  xset s off
+  xset -dpms
   xrandr --auto
   chromium \
     --noerrdialogs \
-    --no-memcheck \
     --no-first-run \
     --start-maximized \
     --disable \
     --disable-translate \
-    --disable-infobars \
-    --disable-suggestions-service \
-    --disable-save-password-bubble \
-    --disable-session-crashed-bubble \
     --incognito \
-    --kiosk $KIOSK_URL
+    --kiosk "https://neave.tv/"
   sleep 5
 done &
 EOF
